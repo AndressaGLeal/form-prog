@@ -1,109 +1,99 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
+
+.titulo{
+	text-align: center;
+	color: navy;
+}
+*{
 	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+body{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-body {
-	line-height: 1;
+.container{
+	text-align: center;
+	background: white;
+	max-width: 350px;
+	min-width: 40vh;
+	padding: 2rem;
+	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+
 }
-ol, ul {
-	list-style: none;
+
+.h2{
+	font-weight: 600;
+	margin-bottom: 2rem;
+	position: relative;
 }
-blockquote, q {
-	quotes: none;
+
+form{
+	display: flex;
+	flex-direction: column;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+.input-field{
+	position: relative;
+}
+form .input-field{
+	margin-bottom: 1.5rem;
+}
+.input-field .underline::before {
 	content: '';
-	content: none;
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+	background: rgba(0, 0, 0, 0.2);
+
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+.input-field .underline::after {
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+	background: linear-gradient(45deg, #8e2de2, #4a00e0);
+	transform: scaleX(0);
+	transition: all .3s ease-in-out;
+	transform-origin: left;
 }
-/*começo do código para a página*/
-body {
-	background-color: #ffede2;
+.input-field input:focus ~ .underline::after {
+	transform: scaleX(1);
 }
-#ma {
-	max-width: 480px;
-	height: 60px;
-	background: #ff914d;
+
+
+.input-field input{
+	outline: none;
+	font-size: 0.9rem;
+	color: rgba(0, 0, 0, 0.7);
 }
-#lo {
-	position: relative;
-	width: 20%;
-	height: 70%;
-	border-radius: 50px;
-	top: 9px;
-	left: 9px;
+.input-field input::placeholder{
+	color: rgba(0, 0, 0, 0.5);
+
 }
-#menu {
-	position: relative;
-	float: right;
-	width: 40px;
-	height: 70%;
-	top: 9px;
-	right: 9px;
-}
-#en {
-	position: relative;
-	background-color: #ff914d;
-	border: 0px;
-	border-radius: 20px;
+
+form input[type="submit"]{
+	margin-top: 2rem;
+	padding: 0.4rem;
+	background: linear-gradient(to left, #4776E6, #8e54e9);
 	cursor: pointer;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 20px;
-	padding: 10px 30px;
-	left: 180px;
+	font-size: 0.9rem;
+	border-radius: 4px;
+	font-weight: 300;
+	transition: all 0.3s ease;
+	color: whitesmoke;
 }
-div {
-	max-width: 480px;
+form input[type="submit"]:hover{
+	letter-spacing: 0.5px;
+	background: linear-gradient(to right, #4776E6, #8e54e9);
 }
-#logos {
-	position: relative;
-	width: 420px;
-	text-align: center;
-	left: 29px;
-	top: 27px;
-}
-.im {
-	position: relative;
-	text-align: center;
-	width: 9%;
-	height: 9%;
-}
-footer {
-	position: relative;
-	background: #ff914d;
-	max-width: 480px;
-	height: 80px;
-	top: 38px;
-}
-#oi {
-	position: relative;
-	color: #ffffff;
-	text-align: center;
-	font-size: 15px;
-	top: 32px;
-}
+

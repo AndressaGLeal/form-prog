@@ -16,14 +16,15 @@ $conexao = mysqli_connect ( $servidor , $usuario , $senha , $bdname );
 
 if (! $conexao )
   die ( "Problemas com a conexão com o banco de dados. Descrição do problema: " . mysqli_connect_error ());
-echo  "Conexão realizada com sucesso!" ;
+echo  "Conexão realizada com sucesso!"; 
 
 $sql = "INSERT INTO usuario ('nome', 'email', 'senha', 'nascimento') VALUE ('$nome', '$email', '$senha', '$nasc')";
 
 if (mysqli_query($conexao, $sql))
     echo "Cadastro realizado com sucesso!";
 else
-    echo "Erro!";
+
+    echo "Erro com o cadastro!";
 
 
 
